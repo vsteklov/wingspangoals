@@ -7,12 +7,6 @@
             top: 0;
             left: 0;
         }
-        /* .image1 {
-            position: relative;
-            top: 0;
-            left: 0;
-            border: 1px red solid;
-        } */
         .goal1 {
             position: absolute;
             top: 18px;
@@ -39,52 +33,49 @@
 
 <h1>Wingspan End Of Round Goals</h1>
 
-<!-- <img src="blue_goals_board.png" alt="End of Round Goals Board" width="626" height="500"> -->
-
 <select onchange="document.getElementById('EndOfRoundGoals').src = this.value">
-    <!-- <option selected disabled>Pick a board</option> -->
-    <option selected value="blue_goals_board.png">Blue</option>
-    <option value="green_goals_board.png">Green</option>
+    <option selected value="images/boards/blue_goals_board.png">Blue</option>
+    <option value="images/boards/green_goals_board.png">Green</option>
 </select>
 
-<button type="button" onclick="myFunction()">Regenerate Goals</button>
+<button type="button" onclick="regenerateGoals()">Regenerate Goals</button>
 
 <script>
-function myFunction() {
-    var array = Array(
-  "birds_in_forest.png",
-  "birds_in_grassland.png",
-  "birds_in_wetland.png",
-  "birds_with_bowl_nest.png",
-  "birds_with_cavity_nest.png",
-  "birds_with_ground_nest.png",
-  "birds_with_platform_nest.png",
-  "eggs_in_bowl_nest.png",
-  "eggs_in_cavity_nest.png",
-  "eggs_in_ground_nest.png",
-  "eggs_in_platform_nest.png",
-  "eggs_in_forest.png",
-  "eggs_in_grassland.png",
-  "eggs_in_wetland.png",
-  "sets_of_eggs.png",
-  "total_birds.png"
+function regenerateGoals() {
+  var goals = Array(
+    "images/goals/birds_in_forest.png",
+    "images/goals/birds_in_grassland.png",
+    "images/goals/birds_in_wetland.png",
+    "images/goals/birds_with_bowl_nest.png",
+    "images/goals/birds_with_cavity_nest.png",
+    "images/goals/birds_with_ground_nest.png",
+    "images/goals/birds_with_platform_nest.png",
+    "images/goals/eggs_in_bowl_nest.png",
+    "images/goals/eggs_in_cavity_nest.png",
+    "images/goals/eggs_in_ground_nest.png",
+    "images/goals/eggs_in_platform_nest.png",
+    "images/goals/eggs_in_forest.png",
+    "images/goals/eggs_in_grassland.png",
+    "images/goals/eggs_in_wetland.png",
+    "images/goals/sets_of_eggs.png",
+    "images/goals/total_birds.png"
 )
-var shuffled = array.sort(function(){ return 0.5 - Math.random() });
-var selected = shuffled.slice(0,4);
-  document.getElementById("goal 1").src = selected[0]
-  document.getElementById("goal 2").src = selected[1]
-  document.getElementById("goal 3").src = selected[2]
-  document.getElementById("goal 4").src = selected[3]
+var shuffledGoals = goals.sort(function(){ return 0.5 - Math.random() });
+var selectedGoals = shuffledGoals.slice(0,4);
+  document.getElementById("goal1").src = selectedGoals[0]
+  document.getElementById("goal2").src = selectedGoals[1]
+  document.getElementById("goal3").src = selectedGoals[2]
+  document.getElementById("goal4").src = selectedGoals[3]
 }
 </script>
 
 
 <div class="parent">
-    <img id="EndOfRoundGoals" src="blue_goals_board.png" alt="End of Round Goals Board" width="626" height="500">
-    <img id="goal 1" class="goal1" width="105" height="105">
-    <img id="goal 2" class="goal2" width="105" height="105">
-    <img id="goal 3" class="goal3" width="105" height="105">
-    <img id="goal 4" class="goal4" width="105" height="105">
+    <img id="EndOfRoundGoals" src="images/boards/blue_goals_board.png" alt="End of Round Goals Board" width="626" height="500">
+    <img id="goal1" class="goal1" width="105" height="105">
+    <img id="goal2" class="goal2" width="105" height="105">
+    <img id="goal3" class="goal3" width="105" height="105">
+    <img id="goal4" class="goal4" width="105" height="105">
 </div>
 
 
